@@ -1,0 +1,19 @@
+html
+  head
+    title Web Test
+  body
+    form(action='/import' method='POST' enctype='multipart/form-data')
+      input(type='file' name='data')
+      button Import
+
+    if errors.length
+      ul
+        each error in errors
+          li= error
+
+    if rows.length
+      table(border='1')
+        each row in rows
+          tr
+            each cell in row
+              td= cell
